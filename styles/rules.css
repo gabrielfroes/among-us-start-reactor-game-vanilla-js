@@ -1,0 +1,56 @@
+@media screen and (max-width: 936px) {
+    .container {
+        flex-direction: column;
+    }
+    .painel {
+        margin: 15px 0;
+        min-width: 280px;
+        min-height: 317px;
+    }
+    .painel .boxPainel {
+        min-height: 268px;
+        min-width: 79.8%;
+    }
+}
+
+@media screen and (min-width: 642px) {
+    .container {
+        flex-direction: row;
+    }
+    .painel {
+        margin: 0 15px;
+        min-width: 280px;
+        min-height: 317px;
+    }
+    .painel .boxPainel {
+        min-height: 268px;
+        min-width: 79.8%;
+    }
+}
+
+@media screen and (min-width: 776px) {
+    .container {
+        flex-direction: row;
+    }
+    .painel {
+        margin: 0 15px;
+        min-width: 368px;
+        min-height: 417px;
+    }
+    .painel .boxPainel {
+        min-height: 353px;
+        min-width: 79.8%;
+    }
+}
+
+@media screen and (min-width: 1159px) {
+    .painel {
+        margin: 0 15px;
+        min-width: 456px;
+        min-height: 517px;
+    }
+    .painel .boxPainel {
+        min-height: 428px;
+        min-width: 79.8%;
+    }
+}
