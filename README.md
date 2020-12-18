@@ -21,9 +21,9 @@ Sinta-se livre para fazer correções e melhorias no código enviando *Pull Requ
 
 ## Authors
 
-* **Gabriel Froes** - *JavaScrit* - [Twitter](https://www.twitter.com/gabrielfroes)
+* **Gabriel Froes** - *JavaScript* - [Twitter](https://www.twitter.com/gabrielfroes)
 * **Erik Santana** - *HTML 5 e CSS 3 (incluindo as animações)* - [GitHub](https://github.com/imerik1/)
-* **Vanessa Weber** - *JavaScrit* - [Twitter](https://www.twitter.com/nessaweberfroes)
+* **Vanessa Weber** - *JavaScript* - [Twitter](https://www.twitter.com/nessaweberfroes)
 
 ## Licença
 
