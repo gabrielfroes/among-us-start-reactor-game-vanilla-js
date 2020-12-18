@@ -1,6 +1,6 @@
 # Mini-Game Start Reactor do Among Us usando Vanilla JS
 
-Todo o jogo, incluindo as animações e os sons, foram desenvolvidos se a utilização de nenhuma lib ou framework. Foram utilizados apenas HTML 5, CSS 3 e JavaScript puro.
+Todo o jogo, incluindo as animações e os sons, foram desenvolvidos sem a utilização de nenhuma lib ou framework. Foram utilizados apenas HTML 5, CSS 3 e JavaScript puro.
 
 O jogo está disponível para testes no [site do Código Fonte](https://startreactor.codigofonte.com.br)
 
