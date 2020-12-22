@@ -5,6 +5,7 @@ startReactor = {
     computerCombinationPosition: 1,
     combinationMaxPosition: 5,
     memoryMaxCombination: 9,
+    successfulSuccessiveTimes: 0,
 
     audio: {
         start: 'start.mp3',
@@ -41,9 +42,17 @@ startReactor = {
         playerLedPanel: document.querySelector(".playerLedPanel"),
         playerMemory: document.querySelector(".playerMemory"),
         playerMemoryButtons: document.getElementsByClassName("player_memory"),
+        successfulSuccessiveTimesLabel: document.getElementById("successful-checks"),
 
         turnLedOn(index, ledPanel) {
             ledPanel.children[index].classList.add("ledOn");
+        },
+
+        renderSuccessfulSuccessiveTimes() {
+
+            const successfulSuccessiveTimesLabel = startReactor.interface.successfulSuccessiveTimesLabel
+            successfulSuccessiveTimesLabel.textContent = startReactor.successfulSuccessiveTimes
+
         },
 
         turnAllLedsOff() {
@@ -59,6 +68,7 @@ startReactor = {
         },
 
         async start() {
+            startReactor.interface.renderSuccessfulSuccessiveTimes();
             return startReactor.audio.start.play()
         },
 
@@ -85,6 +95,16 @@ startReactor = {
 
             startReactor.interface.disableButtons()
             startReactor.interface.turnAllLedsOff()
+
+            
+            if(type === "fail") {
+                startReactor.successfulSuccessiveTimes = 0
+            }
+            else {
+                startReactor.successfulSuccessiveTimes++
+            }
+
+            startReactor.interface.renderSuccessfulSuccessiveTimes()
 
             audio.play().then(() => {
 
@@ -153,7 +173,7 @@ startReactor = {
                     startReactor.play(parseInt(element.dataset.memory))
                     console.log("O valor do elemento clicado é: " + element.dataset.memory)
 
-                    element.style.animation = "playermemoryClick .4s"
+                    element.style.animation = "playermemoryClick .2s"
                     setTimeout(() => element.style.animation = "", 400)
                 }
                 })  

@@ -25,6 +25,13 @@ h1 {
   text-align: center;
 }
 
+h2, h2 > span {
+  text-align: center;
+  color:rgba(197, 197, 197, 1);
+  font-size: 22px;
+  margin-top: 10px;
+}
+
 .btns {
   position: absolute;
   z-index: 100;
