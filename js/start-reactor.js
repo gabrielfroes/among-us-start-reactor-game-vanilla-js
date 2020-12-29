@@ -11,7 +11,7 @@ startReactor = {
         fail: 'fail.mp3',
         complete: 'complete.mp3',
         combinations: ['0.mp3', '1.mp3', '2.mp3', '3.mp3', '4.mp3', '5.mp3', '6.mp3', '7.mp3', '8.mp3'],
-        
+
         loadAudio(filename) {
 
             const file = `./audio/${filename}?cb=${new Date().getTime()}`
@@ -31,7 +31,6 @@ startReactor = {
             startReactor.audio.combinations = startReactor.audio.combinations.map ( (audio) => startReactor.audio.loadAudio(audio))
 
         }
-        
 
     },
     interface: {
@@ -47,11 +46,10 @@ startReactor = {
         },
 
         turnAllLedsOff() {
-            
             const computerLedPanel = startReactor.interface.computerLedPanel
             const playerLedPanel = startReactor.interface.playerLedPanel
 
-            for (var i = 0; i < computerLedPanel.children.length; i++) {
+            for (let i = 0; i < computerLedPanel.children.length; i++) {
                 computerLedPanel.children[i].classList.remove("ledOn");
                 playerLedPanel.children[i].classList.remove("ledOn");
             }
@@ -63,7 +61,7 @@ startReactor = {
         },
 
         playItem(index, combinationPosition, location = 'computer') {
-            
+
             const leds = (location == 'computer') ? startReactor.interface.computerLedPanel : startReactor.interface.playerLedPanel
             const memPanel = startReactor.interface.memoryPanel.children[index]
 
@@ -77,7 +75,7 @@ startReactor = {
         },
 
         endGame(type = "fail") {
-            
+
             const memPanel = startReactor.interface.memoryPanel
             const ledPanel = startReactor.interface.computerLedPanel
             const audio = (type == "complete") ? startReactor.audio.complete : startReactor.audio.fail
@@ -88,22 +86,25 @@ startReactor = {
 
             audio.play().then(() => {
 
-                for (var i = 0; i < memPanel.children.length; i++) {
+                for (let i = 0; i < memPanel.children.length; i++) {
                     if (memPanel.children[i].tagName == "DIV")
                         memPanel.children[i].classList.add(typeClasses[0])
                 }
-                for (var i = 0; i < ledPanel.children.length; i++) {
+
+                for (let i = 0; i < ledPanel.children.length; i++) {
                     if (ledPanel.children[i].tagName == "DIV")
                         ledPanel.children[i].classList.add(typeClasses[1])
                 }
+
                 setTimeout(() => {
-                    for (var i = 0; i < memPanel.children.length; i++) {
-                    if (memPanel.children[i].tagName == "DIV")
-                        memPanel.children[i].classList.remove(typeClasses[0])
+                    for (let i = 0; i < memPanel.children.length; i++) {
+                        if (memPanel.children[i].tagName == "DIV")
+                            memPanel.children[i].classList.remove(typeClasses[0])
                     }
-                    for (var i = 0; i < ledPanel.children.length; i++) {
-                    if (ledPanel.children[i].tagName == "DIV")
-                        ledPanel.children[i].classList.remove(typeClasses[1])
+
+                    for (let i = 0; i < ledPanel.children.length; i++) {
+                        if (ledPanel.children[i].tagName == "DIV")
+                            ledPanel.children[i].classList.remove(typeClasses[1])
                     }
                 }, 900);
 
@@ -116,7 +117,7 @@ startReactor = {
             const playerMemory = startReactor.interface.playerMemory
             playerMemory.classList.add('playerActive')
 
-            for (var i = 0; i < playerMemory.children.length; i++) {
+            for (let i = 0; i < playerMemory.children.length; i++) {
                 if (playerMemory.children[i].tagName == "DIV")
                     playerMemory.children[i].classList.add("playerMemoryActive")
             }
@@ -128,9 +129,9 @@ startReactor = {
             const playerMemory = startReactor.interface.playerMemory
             playerMemory.classList.remove('playerActive')
 
-            for (var i = 0; i < playerMemory.children.length; i++) {
-            if (playerMemory.children[i].tagName == "DIV")
-                playerMemory.children[i].classList.remove("playerMemoryActive");
+            for (let i = 0; i < playerMemory.children.length; i++) {
+                if (playerMemory.children[i].tagName == "DIV")
+                    playerMemory.children[i].classList.remove("playerMemoryActive");
             }
 
         },
@@ -145,20 +146,21 @@ startReactor = {
 
             const playerMemory  = startReactor.interface.playerMemory
             const memory = startReactor.interface.playerMemoryButtons
-            
-            Array.prototype.forEach.call(memory, (element) => {
+
+            Array.from(memory).forEach((element) => {
 
                 element.addEventListener("click", () => {
-                if (playerMemory.classList.contains("playerActive")) {
-                    startReactor.play(parseInt(element.dataset.memory))
-                    console.log("O valor do elemento clicado é: " + element.dataset.memory)
+                    if (playerMemory.classList.contains("playerActive")) {
+                        startReactor.play(parseInt(element.dataset.memory))
+                        console.log("O valor do elemento clicado é: " + element.dataset.memory)
 
-                    element.style.animation = "playermemoryClick .4s"
-                    setTimeout(() => element.style.animation = "", 400)
-                }
-                })  
+                        element.style.animation = "playermemoryClick .4s"
+                        setTimeout(() => element.style.animation = "", 400)
+                    }
+                })
 
             })
+
         })
 
 
@@ -179,7 +181,7 @@ startReactor = {
     createCombination() {
 
         let newCombination = []
-        for (let n = 0; n < startReactor.combinationMaxPosition; n++){
+        for (let n = 0; n < startReactor.combinationMaxPosition; n++) {
             const position = Math.floor((Math.random() * startReactor.memoryMaxCombination) + 1)
             newCombination.push(position-1)
         }
@@ -228,7 +230,7 @@ startReactor = {
         startReactor.interface.disableButtons()
         startReactor.interface.turnAllLedsOff()
 
-        for (let i = 0; i <= startReactor.computerCombinationPosition - 1; i++){
+        for (let i = 0; i <= startReactor.computerCombinationPosition - 1; i++) {
 
             setTimeout(() => {
                 startReactor.interface.playItem(startReactor.computerCombination[i], i)
@@ -243,10 +245,19 @@ startReactor = {
      },
     
     isTheRightCombination(position) {
-        
+
         let computerCombination = startReactor.computerCombination.slice(0, position)
-        return ( computerCombination.toString() == startReactor.playerCombination.toString())
+        return computerCombination.equals(startReactor.playerCombination)
 
     },
 
+}
+
+Array.prototype.equals = function (array) {
+    let i = this.length
+    if (i !== array.length) return false;
+    while (i--) {
+        if (this[i] !== array[i]) return false;
+    }
+    return true;
 }
