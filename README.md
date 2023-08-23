@@ -2,7 +2,7 @@
 
 Todo o jogo, incluindo as animações e os sons, foram desenvolvidos sem a utilização de nenhuma lib ou framework. Foram utilizados apenas HTML 5, CSS 3 e JavaScript puro.
 
-O jogo está disponível para testes no [site do Código Fonte](https://startreactor.codigofonte.com.br)
+O jogo está disponível para testes no [Código Fonte TV](https://game.codigofonte.tv)
 
 **Importante: Apenas para Propósito Educacional**
 Esse projeto foi criado apenas com propósito educativo na área de programação.
@@ -17,13 +17,13 @@ Um agradecimento super especial ao [Erik Santana](https://github.com/imerik1/) p
 
 ## Contribuições
 
-Sinta-se livre para fazer correções e melhorias no código enviando *Pull Requests* para nós.
+Sinta-se livre para fazer correções e melhorias no código enviando _Pull Requests_ para nós.
 
 ## Authors
 
-* **Gabriel Froes** - *JavaScript* - [Twitter](https://www.twitter.com/gabrielfroes)
-* **Erik Santana** - *HTML 5 e CSS 3 (incluindo as animações)* - [GitHub](https://github.com/imerik1/)
-* **Vanessa Weber** - *JavaScript* - [Twitter](https://www.twitter.com/nessaweberfroes)
+- **Gabriel Froes** - _JavaScript_ - [Twitter](https://www.twitter.com/gabrielfroes)
+- **Erik Santana** - _HTML 5 e CSS 3 (incluindo as animações)_ - [GitHub](https://github.com/imerik1/)
+- **Vanessa Weber** - _JavaScript_ - [Twitter](https://www.twitter.com/nessaweberfroes)
 
 ## Licença
 
@@ -31,8 +31,8 @@ Esse projeto é licenciado pela [GNU General Public License](https://opensource.
 
 ## Conhecimentos
 
-* Estrutura de Dados e Controle de Estados com JavaScript
-* Animações utilizando CSS 3
-* Manipulação de áudio
-* Controle de fluxo de tempo para jogos
-* Criação de conteúdo para o [Código Fonte TV](https://youtu.be/C3WZrP0zlUk), nosso canal do YouTube.
+- Estrutura de Dados e Controle de Estados com JavaScript
+- Animações utilizando CSS 3
+- Manipulação de áudio
+- Controle de fluxo de tempo para jogos
+- Criação de conteúdo para o [Código Fonte TV](https://youtu.be/C3WZrP0zlUk), nosso canal do YouTube.
